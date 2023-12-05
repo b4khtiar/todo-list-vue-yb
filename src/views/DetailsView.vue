@@ -371,7 +371,8 @@ onMounted(() => {
             <TodoItem v-for="todo, index in todos" @check="checkItem(todo)" @edit="editItem(todo)"
                 @delete="deleteItem(todo)" :data="todo" :data-cy="'todo-item-' + index" :key="index" />
         </div>
-        <div v-else class="mt-6 w-full h-60 bg-gray-200 border border-b-2 border-b-gray-50 rounded-xl shadow-inner min-h-32"
+        <div v-show="todos.length == 0"
+            class="mt-6 w-full h-60 bg-gray-200 border border-b-2 border-b-gray-50 rounded-xl shadow-inner min-h-32"
             data-cy="todo-empty-state">
             <div class="w-full p-8 text-center text-gray-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
