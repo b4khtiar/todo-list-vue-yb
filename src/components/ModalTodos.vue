@@ -41,12 +41,12 @@ onMounted(() => {
                 </div>
                 <div class="mt-6">
                     <label for="name" class="uppercase text-gray-500 text-xs font-bold tracking-widest">Todo Name</label>
-                    <input v-model="name" type="text" id="name"
+                    <input v-model="name" type="text" id="name" data-cy="modal-add-name-input"
                         class="block w-full mt-1 py-1 text-lg bg-transparent border-b-2 border-gray-600 focus:outline-none">
                 </div>
                 <div class="relative mt-4">
                     <label for="priority" class="uppercase text-gray-500 text-xs font-bold tracking-widest">Priority</label>
-                    <div @click="showPriorityDrop = !showPriorityDrop" name="priority" id="priority"
+                    <div @click="showPriorityDrop = !showPriorityDrop" name="priority" data-cy="modal-add-priority-dropdown"
                         class="flex gap-2 w-fit mt-1 py-1 text-lg bg-transparent border-b-2 border-gray-800 focus:outline-none">
                         <div class="flex gap-3 ">
                             <span class="my-auto">
@@ -62,9 +62,10 @@ onMounted(() => {
                             </svg>
                         </span>
                     </div>
-                    <div v-show="showPriorityDrop"
+                    <div v-show="showPriorityDrop" data-cy="modal-add-priority-dropdown"
                         class="absolute w-fit p-2 bg-white rounded border shadow-md overflow-hidden text-lg">
-                        <div v-for="priority in priorities" @click="prioritySelected = priority, showPriorityDrop = false"
+                        <div v-for="priority, index in priorities" :key="index"
+                            @click="prioritySelected = priority, showPriorityDrop = false"
                             class="flex gap-3 py-2 px-4 border-b">
                             <span class="my-auto">
                                 <PriorityDot :priority="priority" />
@@ -75,10 +76,10 @@ onMounted(() => {
                 </div>
                 <div class="flex gap-2 justify-end mt-6 font-semibold">
                     <button @click="save" class="bg-blue-600 text-white px-5 py-2 rounded-full"
-                        data-cy="modal-delete-confirm-button">
+                        data-cy="modal-add-save-button">
                         Simpan</button>
                     <button @click="emit('cancel')" class=" text-gray-500 border px-7 py-2 rounded-full"
-                        data-cy="modal-delete-cancel-button">Batal</button>
+                        data-cy="modal-add-cancel-button">Batal</button>
                 </div>
             </div>
         </div>
