@@ -33,7 +33,7 @@ onMounted(() => {
 </script>
 <template>
     <div class="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-60">
-        <div class="max-w-lg mx-auto mt-[calc(40vh_-_128px)]" data-cy="modal-add">
+        <div class="max-w-lg mx-auto mt-[calc(40vh_-_128px)]" data-cy="modal-add" v-click-outside="() => emit('cancel')">
             <div class=" bg-white rounded-lg p-8">
                 <div class="flex justify-between">
                     <h3 class="text-xl font-bold">{{ editItem != '' ? 'Edit' : 'Tambah' }} list item</h3>
@@ -46,7 +46,7 @@ onMounted(() => {
                 </div>
                 <div class="relative mt-4">
                     <label for="priority" class="uppercase text-gray-500 text-xs font-bold tracking-widest">Priority</label>
-                    <div @click="showPriorityDrop = !showPriorityDrop" name="priority" data-cy="modal-add-priority-dropdown"
+                    <div @click="showPriorityDrop = !showPriorityDrop" name="priority"
                         class="flex gap-2 w-fit mt-1 py-1 text-lg bg-transparent border-b-2 border-gray-800 focus:outline-none">
                         <div class="flex gap-3 ">
                             <span class="my-auto">
@@ -76,7 +76,7 @@ onMounted(() => {
                 </div>
                 <div class="flex gap-2 justify-end mt-6 font-semibold">
                     <button @click="save" class="bg-blue-600 text-white px-5 py-2 rounded-full"
-                        data-cy="modal-add-save-button">
+                        data-cy="modal-add-save-button" :disabled="name == ''">
                         Simpan</button>
                     <button @click="emit('cancel')" class=" text-gray-500 border px-7 py-2 rounded-full"
                         data-cy="modal-add-cancel-button">Batal</button>
