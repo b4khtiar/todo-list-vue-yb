@@ -46,7 +46,7 @@ onMounted(() => {
                 </div>
                 <div class="relative mt-4">
                     <label for="priority" class="uppercase text-gray-500 text-xs font-bold tracking-widest">Priority</label>
-                    <div @click="showPriorityDrop = !showPriorityDrop" name="priority"
+                    <div @click="showPriorityDrop = !showPriorityDrop" name="priority" data-cy="modal-add-priority-dropdown"
                         class="flex gap-2 w-fit mt-1 py-1 text-lg bg-transparent border-b-2 border-gray-800 focus:outline-none">
                         <div class="flex gap-3 ">
                             <span class="my-auto">
@@ -62,7 +62,7 @@ onMounted(() => {
                             </svg>
                         </span>
                     </div>
-                    <div v-show="showPriorityDrop" data-cy="modal-add-priority-dropdown"
+                    <div v-show="showPriorityDrop"
                         class="absolute w-fit p-2 bg-white rounded border shadow-md overflow-hidden text-lg">
                         <div v-for="priority, index in priorities" :key="index"
                             @click="prioritySelected = priority, showPriorityDrop = false"

@@ -6,8 +6,7 @@ const emit = defineEmits(['cancel', 'confirm']);
 <template>
     <div class="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-60">
         <div class="w-[400px] mx-auto mt-[calc(50vh_-_128px)]">
-            <div class=" bg-white rounded-lg p-8 text-center" data-cy="todo-modal-delete"
-                v-click-outside="() => emit('cancel')">
+            <div class=" bg-white rounded-lg p-8 text-center" data-cy="modal-delete" v-click-outside="() => emit('cancel')">
                 <div class="text-red-600" data-cy="modal-delete-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-12 h-12 mx-auto">

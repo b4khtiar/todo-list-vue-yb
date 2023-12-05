@@ -232,7 +232,8 @@ onMounted(() => {
                 </span>
             </div>
             <div class="flex">
-                <div v-show="showSort" class="absolute top-0 right-[204px] bg-white border rounded shadow px-4 py-2">
+                <div v-show="showSort" class="absolute top-0 right-[204px] bg-white border rounded shadow px-4 py-2"
+                    data-cy="sort-selection">
                     <div @click="sort('desc')" class="flex gap-4 py-2" data-cy="sort-latest">
                         <span>
                             <svg class="w-6 h-6" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
