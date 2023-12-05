@@ -14,10 +14,6 @@ const priorities = [
     'very-low'
 ]
 const save = () => {
-    if (name.value == '') {
-        alert('name cannot be empty')
-        return
-    }
     if (props.editItem.id) {
         const id = props.editItem.id
         emit('save', { id: id, name: name.value, priority: prioritySelected.value })

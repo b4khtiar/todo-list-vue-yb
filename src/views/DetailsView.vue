@@ -203,7 +203,7 @@ onMounted(() => {
                     </svg>
                 </span>
                 <div class="text-3xl text-slate-800 font-bold my-auto">
-                    <h3 v-show="!editTitle" data-cy="todo-title">{{ todoTitle }}</h3>
+                    <h3 v-show="!editTitle" data-cy="todo-title" @click="editTitle = !editTitle">{{ todoTitle }}</h3>
                     <input v-if="editTitle" class="bg-transparent border-b-2 border-gray-800 focus:outline-none" type="text"
                         v-model="todoTitle" v-click-outside="changeTitle">
                 </div>
