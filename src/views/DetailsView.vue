@@ -233,9 +233,9 @@ onMounted(() => {
             </div>
             <div class="flex">
                 <div v-show="showSort" class="absolute top-0 right-[204px] bg-white border rounded shadow px-4 py-2"
-                    data-cy="sort-selection">
-                    <div @click="sort('desc')" class="flex gap-4 py-2" data-cy="sort-latest">
-                        <span>
+                    data-cy="todo-sort-button">
+                    <div @click="sort('desc')" class="flex gap-4 py-2" data-cy="sort-selection">
+                        <span data-cy="sort-selection-icon">
                             <svg class="w-6 h-6" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -257,10 +257,10 @@ onMounted(() => {
                                 </g>
                             </svg>
                         </span>
-                        <span>terbaru</span>
+                        <span data-cy="sort-selection-title">terbaru</span>
                     </div>
-                    <div @click="sort('asc')" class="flex gap-4 py-2" data-cy="sort-oldest">
-                        <span class="text-blue-500">
+                    <div @click="sort('asc')" class="flex gap-4 py-2" data-cy="sort-selection">
+                        <span class="text-blue-500" data-cy="sort-selection-icon">
                             <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -282,10 +282,10 @@ onMounted(() => {
                                 </g>
                             </svg>
                         </span>
-                        <span>terlama</span>
+                        <span data-cy="sort-selection-title">terlama</span>
                     </div>
-                    <div @click="sort('az')" class="flex gap-4 py-2" data-cy="sort-az">
-                        <span class="text-blue-500">
+                    <div @click="sort('az')" class="flex gap-4 py-2" data-cy="sort-selection">
+                        <span class="text-blue-500" data-cy="sort-selection-icon">
                             <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" class="w-6 h-6">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -308,10 +308,10 @@ onMounted(() => {
                                 </g>
                             </svg>
                         </span>
-                        <span>A-Z</span>
+                        <span data-cy="sort-selection-title">A-Z</span>
                     </div>
-                    <div @click="sort('za')" class="flex gap-4 py-2" data-cy="sort-za">
-                        <span class="text-blue-500">
+                    <div @click="sort('za')" class="flex gap-4 py-2" data-cy="sort-selection">
+                        <span class="text-blue-500" data-cy="sort-selection-icon">
                             <svg class="w-6 h-6" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -334,10 +334,10 @@ onMounted(() => {
                                 </g>
                             </svg>
                         </span>
-                        <span>Z-A</span>
+                        <span data-cy="sort-selection-title">Z-A</span>
                     </div>
-                    <div @click="sort('unfinished')" class="flex gap-4 py-2" data-cy="sort-unfinished">
-                        <span>
+                    <div @click="sort('unfinished')" class="flex gap-4 py-2" data-cy="sort-selection">
+                        <span data-cy="sort-selection-icon">
                             <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" class="w-6 h-6">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -359,7 +359,7 @@ onMounted(() => {
                                 </g>
                             </svg>
                         </span>
-                        <span>belum selesai</span>
+                        <span data-cy="sort-selection-title">belum selesai</span>
                     </div>
                 </div>
                 <div @click="showSort = !showSort" class="p-3 border rounded-full mx-3" data-cy="todo-sort-button">

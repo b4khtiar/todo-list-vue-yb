@@ -64,7 +64,7 @@ onMounted(() => {
                     </div>
                     <div v-show="showPriorityDrop"
                         class="absolute w-fit p-2 bg-white rounded border shadow-md overflow-hidden text-lg">
-                        <div v-for="priority, index in priorities" :key="index"
+                        <div v-for="priority, index in priorities" :key="index" data-cy="modal-add-priority-item"
                             @click="prioritySelected = priority, showPriorityDrop = false"
                             class="flex gap-3 py-2 px-4 border-b">
                             <span class="my-auto">
