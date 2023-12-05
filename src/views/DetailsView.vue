@@ -156,7 +156,23 @@ const handleDelete = async () => {
     triggerInfo()
 }
 const sort = (type) => {
+    if (type === 'az') {
+        todos.value = todos.value.sort((a, b) => a.title.localeCompare(b.title))
+    }
+    if (type === 'za') {
+        todos.value = todos.value.sort((a, b) => b.title.localeCompare(a.title))
+    }
+    if (type === 'desc') {
+        todos.value = todos.value.sort((a, b) => b.id - a.id)
+    }
+    if (type === 'asc') {
+        todos.value = todos.value.sort((a, b) => a.id - b.id)
+    }
+    if (type === 'unfinished') {
+        todos.value = todos.value.sort((a, b) => b.is_active - a.is_active)
+    }
     showSort.value = false
+
 }
 
 const changeTitle = async () => {
@@ -242,7 +258,7 @@ onMounted(() => {
                         </span>
                         <span>terbaru</span>
                     </div>
-                    <div @click="sort('desc')" class="flex gap-4 py-2" data-cy="sort-oldest">
+                    <div @click="sort('asc')" class="flex gap-4 py-2" data-cy="sort-oldest">
                         <span class="text-blue-500">
                             <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -267,7 +283,7 @@ onMounted(() => {
                         </span>
                         <span>terlama</span>
                     </div>
-                    <div @click="sort('desc')" class="flex gap-4 py-2" data-cy="sort-az">
+                    <div @click="sort('az')" class="flex gap-4 py-2" data-cy="sort-az">
                         <span class="text-blue-500">
                             <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" class="w-6 h-6">
@@ -293,7 +309,7 @@ onMounted(() => {
                         </span>
                         <span>A-Z</span>
                     </div>
-                    <div @click="sort('desc')" class="flex gap-4 py-2" data-cy="sort-za">
+                    <div @click="sort('za')" class="flex gap-4 py-2" data-cy="sort-za">
                         <span class="text-blue-500">
                             <svg class="w-6 h-6" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor">
@@ -319,7 +335,7 @@ onMounted(() => {
                         </span>
                         <span>Z-A</span>
                     </div>
-                    <div @click="sort('desc')" class="flex gap-4 py-2" data-cy="sort-unfinished">
+                    <div @click="sort('unfinished')" class="flex gap-4 py-2" data-cy="sort-unfinished">
                         <span>
                             <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" class="w-6 h-6">

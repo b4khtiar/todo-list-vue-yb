@@ -15,7 +15,6 @@ const priorities = [
 ]
 const save = () => {
     if (name.value == '') {
-        alert('name cannot be empty')
         return
     }
     if (props.editItem.id) {
