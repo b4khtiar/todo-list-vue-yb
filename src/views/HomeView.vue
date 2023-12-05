@@ -108,8 +108,8 @@ onMounted(() => {
 
     <div v-if="activities.length > 0" class="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-4" data-cy="activity-list">
       <!-- activity list -->
-      <ActivityItem v-for="activity, index in activities" :key="activity.id" :activity="activity"
-        @delete="handleDelete(activity)" @detail="goTo(activity.id)" :data-cy="'activity-item-' + index" />
+      <ActivityItem v-for="activity in activities" :key="activity.id" :activity="activity"
+        @delete="handleDelete(activity)" @detail="goTo(activity.id)" />
     </div>
 
     <div v-show="activities.length == 0"
